@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
-require('dotenv/config');
+import mongoose from 'mongoose';
+
 // console.log(process.env.DB_URL);
 // mongoose.set('debug', true);
 async function connectToDatabase() {
   try {
-    await mongoose.connect(process.env.DB_URL, {
+    await mongoose.connect("mongodb+srv://matthieu:matthieu@cluster0.gxgp8ti.mongodb.net/garage", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -16,4 +16,4 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-module.exports = mongoose;
+export default mongoose;
