@@ -7,6 +7,9 @@ app.get('/', (req, res) => {
     res.send("GG NDAO ATORY SY HOEFUZFNZUDFZUDH");
 });
 
+const CategorieRoute = require('./router/CategorieRoute');
+app.use('/categorie', CategorieRoute);
+
 app.listen(5000, () => {
     console.log('app running');
 });
