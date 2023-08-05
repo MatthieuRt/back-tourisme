@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 // mongoose.set('debug', true);
 async function connectToDatabase() {
   try {
-    await mongoose.connect("mongodb+srv://matthieu:matthieu@cluster0.gxgp8ti.mongodb.net/garage", {
+    await mongoose.connect("mongodb+srv://tourisme:tourisme1234@tourisme.xynbuya.mongodb.net/tourisme", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
