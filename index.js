@@ -1,6 +1,7 @@
-import express from 'express'
-
+const express = require('express');
+require('./util/DBConnexion');
 const app = express()
+
 
 app.get('/',(req,res)=>{
     res.send("GG NDAO ATORY SY HOEFUZFNZUDFZUDH")
