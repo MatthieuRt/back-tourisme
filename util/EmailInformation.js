@@ -8,9 +8,9 @@ const emailBody = `
 <p>L'équipe de notre service</p>
 `;
 
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
-let transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'garagenotificiation@gmail.com',
@@ -18,11 +18,9 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-let mailOptions = {
-    subject: 'Email de confirmation de création de compte',
+const mailOptions = {
+    subject: "Email de confirmation de création de compte",
     html: emailBody
 };
-module.exports = {
-  transporter,
-  mailOptions
-};
+
+export { transporter, mailOptions };
