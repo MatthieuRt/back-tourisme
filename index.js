@@ -17,9 +17,9 @@ const options = {
     passphrase: passphrase
 };
 
-const server = https.createServer(options, app);
+//const server = https.createServer(options, app);
 
-app.use(cors());
+/*app.use(cors());
 app.use(bodyParser.json());
 
 import TouristSpotRoute from './router/TouristSpotsRoute.js';
@@ -31,8 +31,8 @@ app.use('/categorie', CategorieRoute);
 import UserRoute from './router/UtilisateurRoute.js';
 // const InsertionData = require('./util/insertionData');
 // InsertionData();
-app.use('/user', UserRoute);
+app.use('/user', UserRoute);*/
 
-server.listen(9000,()=>{
+app.listen(5000,()=>{
     console.log("APP IS RUNNING")
 });
