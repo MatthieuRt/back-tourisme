@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const HotelSchema = mongoose.Schema({
 	titre:String,
@@ -7,4 +7,7 @@ const HotelSchema = mongoose.Schema({
 	wifi: Boolean,
 	prix : Number
 }, { collection: 'Hotel' })
-module.exports = mongoose.model('Hotel',HotelSchema);
+
+const Hotel = mongoose.model('Hotel', HotelSchema);
+
+export default Hotel;

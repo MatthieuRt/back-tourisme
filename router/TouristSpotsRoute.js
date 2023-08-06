@@ -49,4 +49,15 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// Search a tourist spot
+router.get('/search/:query', async (req, res) => {
+  try {
+    const spot = await TouristSpots.find({ name: { $regex: req.params.query, $options: 'i' } }).exec();
+    return res.json(spot);
+  } catch (err) {
+    console.error('Error retrieving tourist spot by ID:', err);
+    return res.status(500).json({ error: err });
+  }
+});
+
 export default router;

@@ -14,4 +14,14 @@ router.get('/list', async (req, res) => {
     }
 });
 
+router.get('/list/:idPlace', async (req, res) => {
+    try {
+        const ho = await Hotel.find({}).exec();
+        return res.json(ho);
+    } catch (err) {
+        console.error('Erreur lors de la récupération des hôtels :', err);
+        return res.status(500).json({ error: 'Erreur serveur' });
+    }
+});
+
 export default router;
