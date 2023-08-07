@@ -7,9 +7,9 @@ import { transporter, mailOptions } from '../util/EmailInformation.js'; // Make 
 // localhost:9000/user/login
 router.post('/login', async (req, res) => {
     try {
-        const user = await Utilisateur.find({ mail: req.body.mail });
+        const user = await Utilisateur.find({mail : req.body.mail, password : String(req.body.password)}).exec()
         if (user.length === 0) {
-            return res.status(404).json({ error: 'Login osr password incorrect' });
+            return res.status(404).json({ error: 'Login or password incorrect' });
         }
         return res.status(200).json({ success: user });
     } catch (err) {
